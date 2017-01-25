@@ -9,16 +9,21 @@ $(() => {
   anonymousButton.on('click', anonymousForm);
 
   function citizenForm() {
-    type = 'Citizen',
+    type = 'Citizen';
+    citizenButton.addClass('active');
+    organisationButton.removeClass('active');
+    anonymousButton.removeClass('active');
     $('#titleDisplay').show();
     $('#fNameDisplay').show();
     $('#lNameDisplay').show();
-
+    $('#oNameDisplay').hide();
   }
 
   function organisationForm() {
-    console.log('what?');
-    type = 'Organisation',
+    type = 'Organisation';
+    citizenButton.removeClass('active');
+    organisationButton.addClass('active');
+    anonymousButton.removeClass('active');
     $('#titleDisplay').hide();
     $('#fNameDisplay').hide();
     $('#lNameDisplay').hide();
@@ -26,7 +31,10 @@ $(() => {
   }
 
   function anonymousForm() {
-    type = 'Anonymous',
+    type = 'Anonymous';
+    citizenButton.removeClass('active');
+    organisationButton.removeClass('active');
+    anonymousButton.addClass('active');
     $('#titleDisplay').hide();
     $('#fNameDisplay').hide();
     $('#lNameDisplay').hide();
