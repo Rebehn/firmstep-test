@@ -15,3 +15,5 @@ $ npm i
 $ nodemon
 ```
 Then open up your browser and navigate to localhost:8000 to view.
+
+It can also be viewed [here](https://aaronjeffreyhall-firmsteptest.herokuapp.com/).

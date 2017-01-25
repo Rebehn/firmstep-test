@@ -1,5 +1,6 @@
 $(() => {
   $('#newCustomer').on('submit', newCustomer);
+  $('#oNameDisplay').hide();
   let type = 'Citizen';
   const citizenButton = $('#citizenButton');
   const organisationButton = $('#organisationButton');
