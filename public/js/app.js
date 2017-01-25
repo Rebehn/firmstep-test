@@ -47,7 +47,7 @@ $(() => {
     $('#queue').html('');
     $.ajax({
       method: 'GET',
-      url: 'http://localhost:8000/customers'
+      url: '/customers'
     })
     .done((data) => {
       $.each(data, (index, customer) => {
@@ -82,7 +82,7 @@ $(() => {
     e.preventDefault();
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:8000/customers',
+      url: '/customers',
       data: {
         name: name,
         service: service,
