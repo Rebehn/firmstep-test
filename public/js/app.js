@@ -56,13 +56,14 @@ $(() => {
   }
 
   function appendCustomer(index, customer) {
+    const time = moment(customer.createdAt).format('h:mm:ss a');
     $('#queue').append(`
       <tr>
         <th scope="row">${index+1}</th>
         <td>${customer.type}</td>
         <td>${customer.name}</td>
         <td>${customer.service}</td>
-        <td>${customer.createdAt}</td>
+        <td>${time}</td>
       </tr>
       `);
   }
