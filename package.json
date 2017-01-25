@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/Rebehn/firmstep-test/issues"
   },
+  "engines": {
+    "node": "6.8.0"
+  },
   "homepage": "https://github.com/Rebehn/firmstep-test#readme",
   "dependencies": {
     "body-parser": "^1.16.0",
