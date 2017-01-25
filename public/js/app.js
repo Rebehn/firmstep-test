@@ -1,7 +1,9 @@
 $(() => {
   console.log('loaded');
+  $('#newCustomer').on('submit', newCustomer);
 
   function getCustomers() {
+    $('#queue').html('');
     $.ajax({
       method: 'GET',
       url: 'http://localhost:8000/customers'
@@ -24,6 +26,18 @@ $(() => {
         <td>${customer.queued_at}</td>
       </tr>
       `);
+  }
+
+  function newCustomer(e) {
+    console.log('submitting');
+    e.preventDefault();
+    $.ajax({
+      method: 'POST',
+      url: 'http://localhost:8000/customers',
+      data: $('#newCustomer').serialize()
+    }).done(() => {
+      getCustomers();
+    });
   }
 
   getCustomers();
