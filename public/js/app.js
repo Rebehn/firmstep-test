@@ -8,13 +8,22 @@ $(() => {
     })
     .done((data) => {
       $.each(data, (index, customer) => {
-        appendCustomer(customer);
+        appendCustomer(index, customer);
       });
     });
   }
 
-  function appendCustomer(customer) {
+  function appendCustomer(index, customer) {
     console.log(customer);
+    $('#queue').append(`
+      <tr>
+        <th scope="row">${index+1}</th>
+        <td>${customer.type}</td>
+        <td>${customer.name}</td>
+        <td>${customer.service}</td>
+        <td>${customer.queued_at}</td>
+      </tr>
+      `);
   }
 
   getCustomers();
