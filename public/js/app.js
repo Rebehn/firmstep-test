@@ -23,18 +23,23 @@ $(() => {
         <td>${customer.type}</td>
         <td>${customer.name}</td>
         <td>${customer.service}</td>
-        <td>${customer.queued_at}</td>
+        <td>${customer.createdAt}</td>
       </tr>
       `);
   }
 
   function newCustomer(e) {
-    console.log('submitting');
+    const name = $('#title').val() + ' ' + $('#first_name').val() + ' ' + $('#last_name').val();
+    const service = $('input[name=service]:checked').val();
+    console.log(service);
     e.preventDefault();
     $.ajax({
       method: 'POST',
       url: 'http://localhost:8000/customers',
-      data: $('#newCustomer').serialize()
+      data: {
+        name: name,
+        service: service
+      }
     }).done(() => {
       getCustomers();
     });
