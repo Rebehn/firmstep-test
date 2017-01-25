@@ -1,3 +1,8 @@
-module.exports = {
-  uri: process.env.MONGODB_URI || 'mongodb://localhost/queue-app'
-};
+const router = require('express').Router();
+const customersController = require('../controllers/customers');
+
+router.route('/customers')
+  .get(customersController.index)
+  .post(customersController.create);
+
+module.exports = router;
